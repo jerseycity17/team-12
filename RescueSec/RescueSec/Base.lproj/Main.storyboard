@@ -145,7 +145,28 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-Xe-A1m">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POj-Ow-vM7">
+                                        <rect key="frame" x="56" y="590" width="263" height="57"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.082902677930000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="263" id="8Fd-mD-KZj"/>
+                                            <constraint firstAttribute="height" constant="57" id="Bow-Ou-fxO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AkzidenzGroteskBE-Super" family="Berthold Akzidenz Grotesk BE" pointSize="23"/>
+                                        <state key="normal" title="Mark Yourself Safe!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="markedSafeButtonTapped:" destination="gd5-cc-oZb" eventType="touchUpInside" id="9RF-5S-jJQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.78823529410000004" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="POj-Ow-vM7" firstAttribute="centerX" secondItem="HDd-Xe-A1m" secondAttribute="centerX" id="KGd-Hx-uWv"/>
+                                    <constraint firstAttribute="bottom" secondItem="POj-Ow-vM7" secondAttribute="bottom" constant="20" id="avL-WN-gFR"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Zenun" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-4x-UiA">
                                 <rect key="frame" x="0.0" y="32" width="375" height="53"/>
@@ -287,10 +308,13 @@
                         <viewLayoutGuide key="safeArea" id="fub-TE-BOd"/>
                     </view>
                     <navigationItem key="navigationItem" id="aGz-pI-Ln9"/>
+                    <connections>
+                        <outlet property="markedSafeButton" destination="POj-Ow-vM7" id="pgH-CE-CAs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2a-LS-5zb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1775.2" y="98.50074962518741"/>
+            <point key="canvasLocation" x="-1802.4000000000001" y="541.97901049475263"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WDe-Lu-lS9">
@@ -780,6 +804,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fxI-1Q-kG8"/>
-        <segue reference="mi0-W9-Z1j"/>
+        <segue reference="Gj5-Po-Upf"/>
     </inferredMetricsTieBreakers>
 </document>
