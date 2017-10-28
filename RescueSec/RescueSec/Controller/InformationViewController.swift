@@ -7,20 +7,54 @@
 //
 
 import UIKit
+import Firebase
+import ARCL
+import CoreLocation
 
-class InformationViewController: UIViewController {
+
+class InformationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    var ref: DatabaseReference!
+    var currentRegion = "europe"
+    
+    @IBOutlet weak var contactsTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
 
-        // Do any additional setup after loading the view.
+    
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//    }
+//
 
     /*
     // MARK: - Navigation

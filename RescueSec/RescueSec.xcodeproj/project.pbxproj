@@ -23,6 +23,8 @@
 		18074DD91FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18074DD01FA4251C008E5A95 /* Berthold Akzidenz Grotesk BE Regular.otf */; };
 		18074DDA1FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Super.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18074DD21FA4251E008E5A95 /* Berthold Akzidenz Grotesk BE Super.otf */; };
 		18074DDC1FA44166008E5A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18074DC51FA406D4008E5A95 /* GoogleService-Info.plist */; };
+		18C25DED1FA4879D00CB1A09 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25DEC1FA4879D00CB1A09 /* MainTableViewController.swift */; };
+		18C25DEF1FA494B700CB1A09 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25DEE1FA494B700CB1A09 /* ARViewController.swift */; };
 		371E6185A77DA86D79E19CB5 /* Pods_RescueSec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97D5AC7A73ECDFE8267B11D /* Pods_RescueSec.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		18074DD21FA4251E008E5A95 /* Berthold Akzidenz Grotesk BE Super.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berthold Akzidenz Grotesk BE Super.otf"; sourceTree = "<group>"; };
 		18074DD31FA4251E008E5A95 /* Berthold Akzidenz Grotesk BE Medium Extended.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berthold Akzidenz Grotesk BE Medium Extended.otf"; sourceTree = "<group>"; };
 		18074DD41FA4251F008E5A95 /* Berthold Akzidenz Grotesk BE Bold Extended.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berthold Akzidenz Grotesk BE Bold Extended.otf"; sourceTree = "<group>"; };
+		18C25DEC1FA4879D00CB1A09 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		18C25DEE1FA494B700CB1A09 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		27CF3CE4FF45D9037106A75B /* Pods-RescueSec.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RescueSec.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RescueSec/Pods-RescueSec.debug.xcconfig"; sourceTree = "<group>"; };
 		77D32EE56B444F7D767C1106 /* Pods-RescueSec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RescueSec.release.xcconfig"; path = "Pods/Target Support Files/Pods-RescueSec/Pods-RescueSec.release.xcconfig"; sourceTree = "<group>"; };
 		E97D5AC7A73ECDFE8267B11D /* Pods_RescueSec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RescueSec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +92,6 @@
 				18074DCB1FA4115B008E5A95 /* View */,
 				18074DCA1FA41157008E5A95 /* Model */,
 				18074DB01FA403D5008E5A95 /* AppDelegate.swift */,
-				18074DB21FA403D5008E5A95 /* ViewController.swift */,
 				18074DB41FA403D5008E5A95 /* Main.storyboard */,
 				18074DBA1FA403D5008E5A95 /* Assets.xcassets */,
 				18074DBC1FA403D5008E5A95 /* LaunchScreen.storyboard */,
@@ -119,6 +122,9 @@
 				18074DC61FA40D1C008E5A95 /* InformationViewController.swift */,
 				18074DC81FA41150008E5A95 /* SendViewController.swift */,
 				18074DCD1FA418CB008E5A95 /* MainViewController.swift */,
+				18C25DEC1FA4879D00CB1A09 /* MainTableViewController.swift */,
+				18C25DEE1FA494B700CB1A09 /* ARViewController.swift */,
+				18074DB21FA403D5008E5A95 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,9 +292,11 @@
 				18074DB91FA403D5008E5A95 /* RescueSec.xcdatamodeld in Sources */,
 				18074DB31FA403D5008E5A95 /* ViewController.swift in Sources */,
 				18074DB11FA403D5008E5A95 /* AppDelegate.swift in Sources */,
+				18C25DEF1FA494B700CB1A09 /* ARViewController.swift in Sources */,
 				18074DCE1FA418CB008E5A95 /* MainViewController.swift in Sources */,
 				18074DC91FA41150008E5A95 /* SendViewController.swift in Sources */,
 				18074DC71FA40D1C008E5A95 /* InformationViewController.swift in Sources */,
+				18C25DED1FA4879D00CB1A09 /* MainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

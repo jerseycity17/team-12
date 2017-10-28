@@ -1,4 +1,5 @@
 PODS:
+  - ARCL (1.0.1)
   - Firebase/Core (4.4.0):
     - FirebaseAnalytics (= 4.0.4)
     - FirebaseCore (= 4.0.9)
@@ -30,11 +31,13 @@ PODS:
   - SideMenu (3.1.1)
 
 DEPENDENCIES:
+  - ARCL
   - Firebase/Core
   - Firebase/Database
   - SideMenu
 
 SPEC CHECKSUMS:
+  ARCL: 193b108d6fd5277ce742be3af92ccf81bbdd2f3b
   Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseCore: ebe73f64302705e693b1de9919a76edbdd17a19d
@@ -45,6 +48,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SideMenu: 1bf32e90afaa2dc0e0ab68e938a0ff85014c4217
 
-PODFILE CHECKSUM: 8ae07c8f958fb10335a5580ecad03d78e600381b
+PODFILE CHECKSUM: ebde1db44a3fcc18813a2c9752a39b15f0a7d2ad
 
 COCOAPODS: 1.2.0.beta.1

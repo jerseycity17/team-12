@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
    
     
     
@@ -22,9 +22,23 @@ class MainViewController: UIViewController {
     
     var firstView = 1
     
+    let locationManager = CLLocationManager()
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
 
         ref = Database.database().reference()
 
@@ -82,12 +96,23 @@ class MainViewController: UIViewController {
     
     @IBAction func sendLocationButtonTapped(_ sender: Any) {
         
-        self.ref.child("users/\(UID)/locations/current").setValue("78.12312, -19.123123")
+        var locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
+        self.ref.child("users/\(UID)/locations/current").setValue("\(locValue.latitude), \(locValue.longitude)")
 
         
         
     }
     
+    
+    @IBAction func arButtonTapped(_ sender: Any) {
+        
+        let arVC  = ARViewController()
+        self.navigationController?.pushViewController(arVC, animated: true)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+    }
 
     /*
     // MARK: - Navigation

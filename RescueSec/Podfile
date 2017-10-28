@@ -9,6 +9,7 @@ target 'RescueSec' do
   pod 'Firebase/Core'
   pod 'SideMenu'
   pod 'Firebase/Database'
+  pod 'ARCL'
 
   # Pods for RescueSec
 
