@@ -43,7 +43,8 @@ class MainTableViewController: UITableViewController {
         } else if indexPath.row == 2 {
             performSegue(withIdentifier: "showInformation", sender: nil)
         } else if indexPath.row == 3 {
-            
+            performSegue(withIdentifier: "showSend", sender: nil)
+
         } else {
             performSegue(withIdentifier: "showEmergency", sender: nil)
         }

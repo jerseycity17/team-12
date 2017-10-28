@@ -97,6 +97,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="fQh-Cn-WYH" kind="show" identifier="showSend" id="NNN-ku-5Aw"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="0tA-fG-zb8">
                                         <rect key="frame" x="0.0" y="180" width="375" height="60"/>
@@ -598,6 +601,117 @@
             </objects>
             <point key="canvasLocation" x="66" y="1121"/>
         </scene>
+        <!--Send View Controller-->
+        <scene sceneID="s6O-Uc-tCv">
+            <objects>
+                <viewController id="fQh-Cn-WYH" customClass="SendViewController" customModule="RescueSec" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gNS-2j-zjl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send &amp; Receive" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-J4-x3E">
+                                <rect key="frame" x="0.0" y="20" width="375" height="53"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.78823529410000004" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="6It-T3-S1f"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="A20-13-yq2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AkzidenzGroteskBE-BoldCn" family="Berthold Akzidenz Grotesk BE" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-aU-Hb3">
+                                <rect key="frame" x="10" y="30" width="36" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="O3C-U2-MgD"/>
+                                    <constraint firstAttribute="width" constant="36" id="icx-Uw-vIu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AkzidenzGroteskBE-Super" family="Berthold Akzidenz Grotesk BE" pointSize="11"/>
+                                <state key="normal" title="MENU"/>
+                                <connections>
+                                    <segue destination="Uog-n9-gF7" kind="show" id="Uyc-u3-BR9"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iSt-uw-lA4">
+                                <rect key="frame" x="16" y="361" width="343" height="286"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broadcasts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxG-th-7OI">
+                                <rect key="frame" x="70" y="314" width="235" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="T9I-jk-GLC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AkzidenzGroteskBE-Super" family="Berthold Akzidenz Grotesk BE" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHu-5Y-QdC">
+                                <rect key="frame" x="0.0" y="81" width="375" height="205"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-2P-lBp">
+                                        <rect key="frame" x="8" y="8" width="359" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="xYn-rK-RKZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cu-mH-OQ2">
+                                        <rect key="frame" x="67" y="150" width="241" height="49"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.78823529410000004" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="zk6-7c-WQk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AkzidenzGroteskBE-Super" family="Berthold Akzidenz Grotesk BE" pointSize="26"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendMessageButtonTapped:" destination="fQh-Cn-WYH" eventType="touchUpInside" id="3NT-hq-o0D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0Cu-mH-OQ2" secondAttribute="trailing" constant="67" id="5EH-cX-9NH"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="213" id="9gl-zG-yHi"/>
+                                    <constraint firstItem="0Cu-mH-OQ2" firstAttribute="leading" secondItem="jHu-5Y-QdC" secondAttribute="leading" constant="67" id="KW1-M3-kML"/>
+                                    <constraint firstAttribute="height" constant="205" id="Z4d-7E-oT4"/>
+                                    <constraint firstItem="0Cu-mH-OQ2" firstAttribute="top" secondItem="lLa-2P-lBp" secondAttribute="bottom" constant="14" id="kGb-j6-hGx"/>
+                                    <constraint firstAttribute="trailing" secondItem="lLa-2P-lBp" secondAttribute="trailing" constant="8" id="pqd-HO-vxd"/>
+                                    <constraint firstItem="lLa-2P-lBp" firstAttribute="top" secondItem="jHu-5Y-QdC" secondAttribute="top" constant="8" id="q2C-nY-hqT"/>
+                                    <constraint firstItem="lLa-2P-lBp" firstAttribute="leading" secondItem="jHu-5Y-QdC" secondAttribute="leading" constant="8" id="vu9-TL-eEZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.78823529410000004" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iSt-uw-lA4" firstAttribute="top" secondItem="DxG-th-7OI" secondAttribute="bottom" constant="8" id="23g-cJ-CH3"/>
+                            <constraint firstItem="kFd-MW-Hgf" firstAttribute="trailing" secondItem="DxG-th-7OI" secondAttribute="trailing" constant="70" id="GkW-Qe-YLB"/>
+                            <constraint firstItem="jHu-5Y-QdC" firstAttribute="trailing" secondItem="kFd-MW-Hgf" secondAttribute="trailing" id="HCO-ES-38h"/>
+                            <constraint firstItem="DxG-th-7OI" firstAttribute="top" secondItem="jHu-5Y-QdC" secondAttribute="bottom" constant="28" id="Hjt-JA-noA"/>
+                            <constraint firstItem="LWv-aU-Hb3" firstAttribute="top" secondItem="kFd-MW-Hgf" secondAttribute="top" constant="10" id="IO9-qh-dSo"/>
+                            <constraint firstItem="LWv-aU-Hb3" firstAttribute="leading" secondItem="kFd-MW-Hgf" secondAttribute="leading" constant="10" id="J8n-6i-hX6"/>
+                            <constraint firstItem="eXi-J4-x3E" firstAttribute="top" secondItem="kFd-MW-Hgf" secondAttribute="top" id="Ph6-dd-Pra"/>
+                            <constraint firstItem="iSt-uw-lA4" firstAttribute="leading" secondItem="kFd-MW-Hgf" secondAttribute="leading" constant="16" id="X15-du-onz"/>
+                            <constraint firstItem="kFd-MW-Hgf" firstAttribute="trailing" secondItem="iSt-uw-lA4" secondAttribute="trailing" constant="16" id="b2D-sh-yMB"/>
+                            <constraint firstItem="kFd-MW-Hgf" firstAttribute="bottom" secondItem="iSt-uw-lA4" secondAttribute="bottom" constant="20" id="czi-K8-Nhh"/>
+                            <constraint firstItem="jHu-5Y-QdC" firstAttribute="leading" secondItem="kFd-MW-Hgf" secondAttribute="leading" id="iMc-Zb-kDU"/>
+                            <constraint firstItem="eXi-J4-x3E" firstAttribute="leading" secondItem="kFd-MW-Hgf" secondAttribute="leading" id="kRk-t0-Yp9"/>
+                            <constraint firstItem="eXi-J4-x3E" firstAttribute="trailing" secondItem="kFd-MW-Hgf" secondAttribute="trailing" id="m1w-6y-7vj"/>
+                            <constraint firstItem="DxG-th-7OI" firstAttribute="leading" secondItem="kFd-MW-Hgf" secondAttribute="leading" constant="70" id="qmR-cj-1Hy"/>
+                            <constraint firstItem="jHu-5Y-QdC" firstAttribute="top" secondItem="eXi-J4-x3E" secondAttribute="bottom" constant="8" id="y5v-6T-g8u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kFd-MW-Hgf"/>
+                    </view>
+                    <connections>
+                        <outlet property="sendButton" destination="0Cu-mH-OQ2" id="gQu-oF-NIf"/>
+                        <outlet property="tableView" destination="iSt-uw-lA4" id="ght-W1-CTb"/>
+                        <outlet property="textView" destination="lLa-2P-lBp" id="z0j-9b-raN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wtt-c5-Zlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="1005.2473763118442"/>
+        </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="QGl-vd-wqp">
             <objects>
@@ -646,6 +760,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fxI-1Q-kG8"/>
-        <segue reference="omP-JA-omR"/>
+        <segue reference="mi0-W9-Z1j"/>
     </inferredMetricsTieBreakers>
 </document>
