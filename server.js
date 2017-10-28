@@ -1,26 +1,77 @@
-var admin = require("firebase-admin");
-//var firebase = require("./database/index.js");
+// Dependencies
+const admin = require("firebase-admin");
+const express = require('express');
+const bodyParser = require('body-parser');
 
+// Setup
 admin.initializeApp({
   credential: admin.credential.cert("rescue-sec-sa.json"),
   databaseURL: "https://rescue-sec.firebaseio.com"
 });
-var db = admin.database();
+const db = admin.database();
+const app = express();
 
-function createOffice(region, country, fieldOffice, location) {
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// API
+
+// Create a new office
+app.post('/add/offices', (req, res) => {
+  const {region, country, fieldOffice, location} = req.body;
   db.ref('offices/' + region + '/' + country + '/' + fieldOffice).set({
     region: region,
     country: country,
     fieldOffice: fieldOffice,
     location: location
+  }, error => {
+    if (error) {
+      console.log(region);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
   });
-}
+});
 
-function addContact(region, country, fieldOffice, location, type, contact) {
-  db.ref('offices/' + region + '/' + country + '/' + fieldOffice + '/contacts/' + type).push(contact);
-}
+// Add a new contact for office
+app.post('/add/offices/contacts', (req, res) => {
+  const {region, country, fieldOffice, location, type, number} = req.body;
+  db.ref('offices/' + region + '/' + country + '/' + fieldOffice + '/contacts/' + type).push(number);
+  res.sendStatus(201);
+});
 
-// Create a new office
-createOffice('US','NY','New York','loc_holder');
-// Add contacts: emergency, medical, security
-addContact('US','NY','New York','loc_holder','emergency',8006005000);
+// Get office info
+app.get('/get/offices', (req, res) => {
+  db.ref('offices').once('value').then( snapshot => {
+    res.send(snapshot.val());
+  });
+});
+
+// Create a new user
+app.post('/add/users', (req, res) => {
+  const {userId, firstName, lastName, email, contacts, title, locations, region, country, field} = req.body;
+  db.ref('users/' + userId).set({
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    contacts: {
+      cell: contacts[0],
+      home: contacts[1],
+      office: contacts[2]
+    },
+    title: title,
+    locations: {
+      current: locations[0],
+      home: locations[1],
+      previous: locations[2]
+    },
+  office: region + ',' + country + ',' + field
+  });
+});
+
+
+app.listen(3000, function () {
+  console.log('Rescue Sec listening on port 3000!')
+});
