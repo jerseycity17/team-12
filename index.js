@@ -4,7 +4,7 @@ var fs = require('fs');
 
 // Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
-  credential: admin.credential.cert("1rcrl-7bad2de229.json"),
+  credential: admin.credential.cert("rescue-sec-sa.json"),
   databaseURL: "https://rescue-sec.firebaseio.com"
 });
 
