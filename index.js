@@ -39,6 +39,31 @@ function createUser(userId, firstName, lastName, email, contacts, title, locatio
     });
 }
 
+// Create new safety check (Send notifications, etc.)
+function createSafetyChecks(region_name, vector) {
+	var rootRef = db.ref();
+	var storesRef = rootRef.child('safety checks/regions/' + region_name + '/');
+	var newStoreRef = storesRef.push();
+	newStoreRef.set({
+		message: vector[0],
+		title: vector[1],
+		didCheck: vector[2]
+	})
+};
+
+// Create new zone safety notification
+function createZoneSafety(region_name, vector) {
+	var rootRef = db.ref();
+	var storesRef = rootRef.child('important zones/regions/' + region_name + '/');
+	var newStoreRef = storesRef.push();
+	newStoreRef.set
+	({
+		dangerLevel: vector[0],
+		lattitude: vector[1],
+		longitude: vector[2]
+	})
+}
+
 function setUserLocations(userId, locations) {
 	db.ref('users/' + userId + '/locations').set({
 		current: locations[0],
@@ -99,6 +124,42 @@ function sendMessage(mtxt, toNum, fromNum) {
 		from: '+' + fromNum // From a valid Twilio number
 	}).then((message) => console.log(message.sid));
 }
+
+// Remove user data
+function removeUser(userId) {
+	var to_remove = db.ref('users/' + userId);
+	to_remove.remove();         
+}
+
+function createOffice(region, country, fieldOffice, location) {
+  db.ref('offices/' + region + '/' + country + '/' + fieldOffice).set({
+    region: region,
+    country: country,
+    fieldOffice: fieldOffice,
+    location: location
+  });
+}
+
+function addContact(region, country, fieldOffice, location, type, contact) {
+  db.ref('offices/' + region + '/' + country + '/' + fieldOffice + '/contacts/' + type).push(contact);
+}
+
+// Create a new office
+createOffice('US','NY','New York','loc_holder');
+// Add contacts: emergency, medical, security
+addContact('US','NY','New York','loc_holder','emergency',8006005000);
+
+// Test Code
+createZoneSafety("europe", ["Cautious", "40.732530", "-74.034556"]);
+createZoneSafety("europe", ["Safe", "40.731415", "-74.039054"]);
+createZoneSafety("europe", ["Dangerous", "40.732269", "-74.032400"]);
+createZoneSafety("europe", ["Safe", "40.729997", "-74.031966"]);
+createZoneSafety("europe", ["Cautious", "40.727891", "-74.032084"]);
+createZoneSafety("europe", ["Dangerous", "40.727021", "-74.034262"]);
+createZoneSafety("europe", ["Safe", "40.726889", "-74.035021"]);
+createZoneSafety("europe", ["Cautious", "40.729840", "-74.035311"]);
+createZoneSafety("europe", ["Dangerous", "40.727919", "-74.037488"]);
+createZoneSafety("europe", ["Cautious", "40.727523", "-74.036212"]);
 
 var userId = 123456789;
 createUser(userId, "John", "Smith", "test@example.com", [1,2,3],"test", ["1,-1","2,-2","3,-3"], "US", "NY", "New York");
