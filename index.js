@@ -19,7 +19,7 @@ var authToken = '730567e063a28debdf69c6d5c0f28a21';
 var client = new twilio(accountSid, authToken);
 
 // Create a new user
-function createUser(userId, firstName, lastName, email, contacts, title, locations){
+function createUser(userId, firstName, lastName, email, contacts, title, locations, region, country, field){
     db.ref('users/' + userId).set({
       firstName: firstName,
       lastName: lastName,
@@ -34,7 +34,8 @@ function createUser(userId, firstName, lastName, email, contacts, title, locatio
         current: locations[0],
         home: locations[1],
         previous: locations[2]
-      }
+      },
+	  office: region + ',' + country + ',' + field
     });
 }
 
@@ -100,11 +101,11 @@ function sendMessage(mtxt, toNum, fromNum) {
 }
 
 var userId = 123456789;
-createUser(userId, "John", "Smith", "test@example.com", [1,2,3],"test", ["1,-1","2,-2","3,-3"]);
+createUser(userId, "John", "Smith", "test@example.com", [1,2,3],"test", ["1,-1","2,-2","3,-3"], "US", "NY", "New York");
 var currLoc = getUserCurrLocation(userId);
 var homeLoc = getUserHomeLocation(userId);
 var previousLoc = getUserPreviousLocation(userId);
 console.log(currLoc);
 console.log(homeLoc);
 console.log(previousLoc);
-sendMessage('no', '19086037936', '19042043485');
+//sendMessage('no', '19086037936', '19042043485');
