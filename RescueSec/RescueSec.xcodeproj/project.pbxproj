@@ -22,6 +22,7 @@
 		18074DD81FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Medium Extended.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18074DD31FA4251E008E5A95 /* Berthold Akzidenz Grotesk BE Medium Extended.otf */; };
 		18074DD91FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18074DD01FA4251C008E5A95 /* Berthold Akzidenz Grotesk BE Regular.otf */; };
 		18074DDA1FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Super.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18074DD21FA4251E008E5A95 /* Berthold Akzidenz Grotesk BE Super.otf */; };
+		18074DDC1FA44166008E5A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18074DC51FA406D4008E5A95 /* GoogleService-Info.plist */; };
 		371E6185A77DA86D79E19CB5 /* Pods_RescueSec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97D5AC7A73ECDFE8267B11D /* Pods_RescueSec.framework */; };
 /* End PBXBuildFile section */
 
@@ -214,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18074DDC1FA44166008E5A95 /* GoogleService-Info.plist in Resources */,
 				18074DD51FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Bold Condensed.otf in Resources */,
 				18074DD61FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Bold Extended.otf in Resources */,
 				18074DD71FA42541008E5A95 /* Berthold Akzidenz Grotesk BE Medium Condensed.otf in Resources */,
