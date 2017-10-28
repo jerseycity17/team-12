@@ -61,3 +61,9 @@ typings/
 rescue-sec-sa.json
 twilio
 node_modules/
+**/secrets.json
+**/firebase-debug.log
+**/node_modules
+**/bower_components
+**/*.bak
+.idea
