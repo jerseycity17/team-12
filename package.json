@@ -1,0 +1,19 @@
+{
+  "name": "rescuesec",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerseycity17/team-12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerseycity17/team-12/issues"
+  },
+  "homepage": "https://github.com/jerseycity17/team-12#readme"
+}
