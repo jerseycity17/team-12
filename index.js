@@ -1,4 +1,6 @@
 var admin = require("firebase-admin");
+var twilio = require('twilio');
+var fs = require('fs');
 
 // Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
@@ -10,6 +12,11 @@ admin.initializeApp({
 var db = admin.database();
 
 var rootRef = db.ref();
+
+var accountSid = 'AC6a5533386b6621270cf5a57c3b2c1b42'; // Your Account SID from www.twilio.com/console
+var authToken = '730567e063a28debdf69c6d5c0f28a21';
+
+var client = new twilio(accountSid, authToken);
 
 // Create a new user
 function createUser(userId, firstName, lastName, email, contacts, title, locations){
@@ -54,9 +61,9 @@ function setUserPreviousLocation(userId, loc) {
 function getUserCurrLocation(userId) {
 	var loc = 'None';
 	
-	db.ref('users/' + userId + '/locations/current').once('value').then(
-	function(snapshot) {
-		loc = snapshot.val() || 'None';
+	var ref = db.ref('users/' + userId + '/locations');
+	ref.on('value', function(snapshot) {
+		loc = snapshot.val().current || 'None';
 	});
 	
 	return loc;
@@ -65,9 +72,9 @@ function getUserCurrLocation(userId) {
 function getUserHomeLocation(userId) {
 	var loc = 'None';
 	
-	db.ref('users/' + userId + '/locations/home').once('value').then(
-	function(snapshot) {
-		loc = snapshot.val() || 'None';
+	var ref = db.ref('users/' + userId + '/locations');
+	ref.on('value', function(snapshot) {
+		loc = snapshot.val().home || 'None';
 	});
 	
 	return loc;
@@ -76,12 +83,28 @@ function getUserHomeLocation(userId) {
 function getUserPreviousLocation(userId) {
 	var loc = 'None';
 	
-	db.ref('users/' + userId + '/locations/previous').once('value').then(
-	function(snapshot) {
-		loc = snapshot.val() || 'None';
+	var ref = db.ref('users/' + userId + '/locations');
+	ref.on('value', function(snapshot) {
+		loc = snapshot.val().previous || 'None';
 	});
 	
 	return loc;
 }
 
-createUser(123456789, "John", "Smith", "test@example.com", [1,2,3],"test", ["1,-1","2,-2","3,-3"]);
+function sendMessage(mtxt, toNum, fromNum) {
+	client.messages.create({
+		body: mtxt,
+		to: '+' + toNum,  // Text this number
+		from: '+' + fromNum // From a valid Twilio number
+	}).then((message) => console.log(message.sid));
+}
+
+var userId = 123456789;
+createUser(userId, "John", "Smith", "test@example.com", [1,2,3],"test", ["1,-1","2,-2","3,-3"]);
+var currLoc = getUserCurrLocation(userId);
+var homeLoc = getUserHomeLocation(userId);
+var previousLoc = getUserPreviousLocation(userId);
+console.log(currLoc);
+console.log(homeLoc);
+console.log(previousLoc);
+sendMessage('no', '19086037936', '19042043485');

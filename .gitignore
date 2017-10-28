@@ -59,3 +59,5 @@ typings/
 
 #FIREBASE
 1rcrl-7bad2de229.json
+twilio
+node_modules/
